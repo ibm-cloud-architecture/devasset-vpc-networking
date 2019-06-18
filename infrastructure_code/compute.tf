@@ -11,7 +11,6 @@ resource "ibm_is_instance" "basic_networking_is" {
   profile = "${var.machine_type}"
 
   primary_network_interface = {
-    port_speed      = "${var.port_speed}"
     subnet          = "${element(ibm_is_subnet.basic_networking_subnet.*.id, count.index < 2 ? 0 : 1)}"
     security_groups = ["${element(ibm_is_security_group.basic_networking_security_group.*.id, count.index < 2 ? 0 : 1)}"]
   }
