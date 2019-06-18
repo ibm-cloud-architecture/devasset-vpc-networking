@@ -6,10 +6,9 @@
 #the permissions to deploy this archiecture's resources.
 
 provider "ibm" {
-  bluemix_api_key    = "${var.paasapikey}"
+  ibmcloud_api_key   = "${var.paasapikey}"
   softlayer_username = "${var.iaasusername}"
   softlayer_api_key  = "${var.iaasapikey}"
   region             = "${var.ibm_region}"
   resource_group     = "${var.resource_group}"
-  riaas_endpoint     = "${var.riaas_endpoint}"
 }
