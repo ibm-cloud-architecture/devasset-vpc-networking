@@ -42,6 +42,7 @@ resource "ibm_is_lb" "basic_networking_lb" {
     name           = "bn-${count.index == 0 ? "app" : "data"}-lb"
     subnets        =  ["${element(ibm_is_subnet.basic_networking_subnet.*.id, count.index)}"]
     resource_group = "${var.resource_group}"
+    type           = "${count.index == 0 ? "public" : "private"}"
 }
 
 resource "ibm_is_lb_pool" "basic_networking_lb_pool" {
@@ -68,7 +69,7 @@ resource "ibm_is_lb_pool_member" "basic_networking_lb_mem" {
 resource "ibm_is_lb_listener" "basic_networking_lb_listener" {
   count        = "2"
   lb           = "${element(ibm_is_lb.basic_networking_lb.*.id, count.index)}"
-  port         = 80
+  port         = "${count.index == 0 ? 80 : 3306}"
   protocol     = "http"
   default_pool = "${replace("${element(ibm_is_lb_pool.basic_networking_lb_pool.*.id, count.index)}", "/.+//", "" )}"
 }
