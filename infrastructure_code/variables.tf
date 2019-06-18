@@ -48,9 +48,6 @@ variable  image_template_id {}
 # Machine type used while provisioning VM.
 variable machine_type {}
 
-# Port speed used while provisioning VM.
-variable port_speed  {}
-
 # CIDR value for subnet.
 variable subnet_cidr {}
 
