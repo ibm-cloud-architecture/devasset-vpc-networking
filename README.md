@@ -1,4 +1,4 @@
-## Deploy Basic Networking for IBM Cloud VPC wth Terraform
+## Deploy Basic Networking for IBM Cloud VPC with Terraform
 
 Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with security groups using Terraform
 
