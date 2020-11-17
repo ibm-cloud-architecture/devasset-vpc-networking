@@ -19,10 +19,12 @@ Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with secur
 
 ### Steps to deploy this asset
 
+<!---
 1. **Build** the IBM Cloud Terraform docker container using the steps in the tutorial noted above.
    - Log into the Docker container.
    - Clone this repository.
      `$ git clone https://github.com/ibm-cloud-architecture/refasset-public-VPC-basic-networking`
+-->
 
 2. **Deploy** this solution to IBM Cloud.
 
@@ -32,8 +34,9 @@ Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with secur
    - Edit the variable.tf and add your values for the variables.
    - Run Terraform (init, plan, apply).
 
+<!---
 3. **Test** the deployment
    - To test the deployment, you can [use these steps](https://github.com/ibm-cloud-architecture/tutorial-vpc-3tier-networking/blob/master/WebApp.md) to install and run a 3-tier application. 
 
  4. **Enjoy!**
-
+-->
