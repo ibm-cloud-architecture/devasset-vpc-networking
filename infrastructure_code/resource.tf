@@ -8,8 +8,6 @@
 # - change all references to a resource group  to refer to the output ID of the
 #   block below replacing with "ibm_resource_group.resourceGroup.id"
 ##############################################################################
-
-
-#resource "ibm_resource_group" "resourceGroup" {
-#  name = "${var.resource_group}"
+#resource "ibm_resource_group" "resourcegroup" {
+#  name = "${var.resource-group}"
 #}

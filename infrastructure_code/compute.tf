@@ -4,25 +4,34 @@
 #Create each  compute, there is a variable that defines the number of instances to
 #be deployed. The name, subnets, floating IPs and security groups are also index based
 #on the number of virtual servers.
-resource "ibm_is_instance" "basic_networking_is" {
+resource "ibm_is_instance" "basic-networking-is" {
   count   = "4"
-  name    = "bn-${count.index < 2 ? "appserv" : "mysql"}-${((count.index+1) % 2) == 0 ? 1 : 2}"
-  image   = "${var.image_template_id}"
-  profile = "${var.machine_type}"
+  name    = "bn-${count.index < 2 ? "appserv" : "mysql"}-${count.index + 1 % 2 == 0 ? 1 : 2}"
+  image   = var.image-template-id
+  profile = var.machine-type
 
-  primary_network_interface = {
-    subnet          = "${element(ibm_is_subnet.basic_networking_subnet.*.id, count.index < 2 ? 0 : 1)}"
-    security_groups = ["${element(ibm_is_security_group.basic_networking_security_group.*.id, count.index < 2 ? 0 : 1)}"]
+  primary_network_interface {
+    subnet = element(
+      ibm_is_subnet.basic-networking-subnet.*.id,
+      count.index < 2 ? 0 : 1,
+    )
+    security_groups = [element(
+      ibm_is_security_group.basic-networking-security-group.*.id,
+      count.index < 2 ? 0 : 1,
+    )]
   }
 
-  vpc  = "${ibm_is_vpc.basic_networking_vpc.id}"
-  zone = "${var.availability_zone}"
-  keys = ["${ibm_is_ssh_key.basic_networking_key.id}"]
+  vpc  = ibm_is_vpc.basic-networking-vpc.id
+  zone = var.availability-zone
+  keys = [ibm_is_ssh_key.basic-networking-key.id]
 }
 
-resource "ibm_is_floating_ip" "basic_networking_fip" {
-  count  = "4"
-  name   = "bn_${count.index < 2 ? "appserv" : "mysql"}_${((count.index+1) % 2) == 0 ? 1 : 2}"
-  target = "${element(ibm_is_instance.basic_networking_is.*.primary_network_interface.0.id, count.index)}"
+resource "ibm_is_floating_ip" "basic-networking-fip" {
+  count = "4"
+  name  = "bn-${count.index < 2 ? "appserv" : "mysql"}-${count.index + 1 % 2 == 0 ? 1 : 2}"
+  target = element(
+    ibm_is_instance.basic-networking-is.*.primary_network_interface.0.id,
+    count.index,
+  )
 }
 
