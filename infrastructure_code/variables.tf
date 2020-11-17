@@ -62,9 +62,9 @@ variable "access-to-any-ip" {
   default     = "0.0.0.0/0"
 }
 
-# OS image template used while provisioning VM. Default image is of Ubuntu.
+# OS image template used while provisioning VM. Default image is of Ubuntu 20.04.
 variable "image-template-id" {
-  default = "r006-ed3f775f-ad7e-4e37-ae62-7199b4988b00"
+  default = "r006-988caa8b-7786-49c9-aea6-9553af2b1969"
 }
 
 # Machine type used while provisioning VM.
