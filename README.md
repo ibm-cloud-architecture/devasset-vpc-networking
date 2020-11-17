@@ -14,7 +14,7 @@ Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with secur
 
 2. Obtain the variable values need in the [variables.tf](./infrastructure_code/network.tf) file.
 
-3. Refer to [IBM Cloud documentation on VPC](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started) for detailed information. 
+3. Refer to [IBM Cloud documentation on VPC](https://cloud.ibm.com/docs/vpc) for detailed information.
 
 
 ### Steps to deploy this asset
@@ -26,7 +26,7 @@ Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with secur
      `$ git clone https://github.com/ibm-cloud-architecture/refasset-public-VPC-basic-networking`
 -->
 
-2. **Deploy** this solution to IBM Cloud.
+1. **Deploy** this solution to IBM Cloud.
 
    - Change directory to the folder containing the terraform - [./infrastructure_code](./infrastructure_code).
    - Review the terraform files (main and variables) in that folder.
