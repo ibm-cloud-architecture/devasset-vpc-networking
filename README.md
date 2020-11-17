@@ -5,7 +5,7 @@ Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with secur
 
 ### Architecture
 
-![Reference Architecture](./imgs/architecture.png)
+![Reference Architecture](./imgs/devasset-vpc-networking.png)
 
 
 ### Prerequisites
