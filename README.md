@@ -1,6 +1,6 @@
 ## Deploy Basic Networking for IBM Cloud VPC with Terraform
 
-Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with security groups using Terraform.
+Deploy a VPC with multiple subnets, public and private load balancers, ACLs, public gateway, and virtual servers with security groups using Terraform.
 
 
 ### Architecture
