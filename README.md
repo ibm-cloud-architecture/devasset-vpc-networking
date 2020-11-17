@@ -28,10 +28,10 @@ Deploy a VPC with multiple subnets, ACLs, gateway and virtual servers with secur
 
 1. **Deploy** this solution to IBM Cloud.
 
-   - Change directory to the folder containing the terraform - [./infrastructure_code](./infrastructure_code).
-   - Review the terraform files (main and variables) in that folder.
-   - Edit the bootstrap.sh and add your API key and Auth token at line: 25,26.
-   - Edit the variable.tf and add your values for the variables.
+   - Change directory to the folder containing terraform files - [./infrastructure_code](./infrastructure_code).
+   - Review the terraform files in that folder.
+   - Edit versions.tf and update the versions of Terraform and IBM Cloud Terraform Provider. 
+   - Edit variables.tf and update the values for iaasapikey, ssh-key, and other variables as desired.
    - Run Terraform (init, plan, apply).
 
 <!---

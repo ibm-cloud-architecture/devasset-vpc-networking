@@ -1,9 +1,9 @@
-#This terraform file provisions the compute components for the vpc networking solution. 
-# a common ssh key is created and assigned to all virtual servers.
+# This terraform file provisions the compute components for the vpc networking solution. 
+# A common ssh key is created and assigned to all virtual servers.
 
-#Create each  compute, there is a variable that defines the number of instances to
-#be deployed. The name, subnets, floating IPs and security groups are also index based
-#on the number of virtual servers.
+# Create each instance, there is a variable that defines the number of instances to
+# be deployed. The name, subnets, floating IPs and security groups are also index based
+# on the number of virtual servers.
 resource "ibm_is_instance" "basic-networking-is" {
   count   = "4"
   name    = "bn-${count.index < 2 ? "appserv" : "mysql"}-${count.index + 1 % 2 == 0 ? 1 : 2}"

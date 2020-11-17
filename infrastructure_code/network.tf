@@ -1,5 +1,5 @@
-#This file creates the network components for the vpc that will be used by the compute 
-#resources. The vpc includes the vpc, gateway, subnets and load balancers.
+# This file creates the network components for the vpc that will be used by the compute 
+# resources. The vpc includes the vpc, gateway, subnets and load balancers.
 
 # Create an IBM Cloud infrastructure SSH key. You can find the SSH key surfaces in the infrastructure console under Devices > Manage > SSH Keys
 resource "ibm_is_ssh_key" "basic-networking-key" {

@@ -1,5 +1,5 @@
-#This file creates a single Object Storage resource instance that will be used
-#by the application instances.
+# This file creates a single Object Storage resource instance that will be used
+# by the application instances.
 
 resource "ibm_resource_instance" "cos-resource-instance" {
   name              = "vpc-cos"
